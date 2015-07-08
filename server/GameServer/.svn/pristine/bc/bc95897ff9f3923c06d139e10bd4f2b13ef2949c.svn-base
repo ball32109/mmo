@@ -1,0 +1,93 @@
+/*
+ * GameDeamon.cpp
+ *
+ *  Created on: Jan 9, 2015
+ *      Author: root
+ */
+
+#include "GameDeamon.h"
+
+#include<sys/types.h>
+#include<sys/wait.h>
+#include <unistd.h>
+
+GameDeamon::GameDeamon(void)
+{
+}
+
+GameDeamon::~GameDeamon(void)
+{
+
+}
+
+GameDeamon* GameDeamon::instance_ = 0;
+
+GameDeamon* GameDeamon::instance(void)
+{
+    if (instance_ == 0)
+    {
+        instance_ = new GameDeamon();
+    }
+    return instance_;
+}
+
+void GameDeamon::destroy(void)
+{
+    if (instance_ != 0)
+    {
+        delete instance_;
+        instance_ = 0;
+    }
+}
+
+int GameDeamon::analyseArguments(int argc, char** argv)
+{
+	if (argc <= 1)
+	{
+		this->start();
+	}
+	else
+	{
+
+	}
+	return 0;
+}
+
+void GameDeamon::signalCallBack(int sig)
+{
+	SignalEventBaseThread::signalCallBack(sig);
+
+	printf("GameDeamon::signalCallBack sig=%d", sig);
+}
+
+int GameDeamon::start(void)
+{
+	SignalEventBaseThread::start();
+
+	pid_t pid = fork();
+	if (pid < 0)
+	{
+		printf("GameDeamon::start fork error\n");
+//		exit(0);
+	}
+	else if (pid == 0)
+	{
+
+	}
+	else
+	{
+		//return excev
+	}
+
+	return this->stop();
+}
+
+int GameDeamon::stop(void)
+{
+	//::wait(NULL);
+	while(1)
+	{
+		sleep(2);
+	}
+	return 0;
+}

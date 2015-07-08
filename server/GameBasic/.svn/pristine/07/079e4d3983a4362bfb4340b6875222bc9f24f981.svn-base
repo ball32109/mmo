@@ -1,0 +1,58 @@
+/*
+ * TcpMonitor.h
+ *
+ *  Created on: Dec 17, 2014
+ *      Author: root
+ */
+
+#ifndef GWEN_TCPMONITOR_H_
+#define GWEN_TCPMONITOR_H_
+
+#include <string.h>//use strlen by TcpClient and TcpServer
+#include "ThreadMonitor.h"
+#include "Buffer.h"
+
+class TcpMonitor
+{
+public:
+	TcpMonitor(void);
+	virtual ~TcpMonitor(void);
+
+	virtual int init(int receive_thread_amount = 0 ,//
+			int send_thread_amount = 0, int event_thread_amount = 0);
+
+	virtual int start(void);
+	virtual int stop(void);
+	virtual int final(void);
+
+	void handleRead(int fd, Buffer *buffer);
+	virtual int send(int fd, Buffer *buffer);
+	virtual int receive(int fd, Buffer *buffer) =0;
+	virtual void handleClosed(int fd) = 0;
+
+	virtual int receiveHandleMessage(Buffer *buffer);
+	virtual int sendHandleMessage(Buffer *buffer);
+
+	event_base* eventBase(int index = 0);
+	void eventBase(event_base* base);
+
+protected:
+	virtual int sendMessage(int fd, Buffer *buffer) = 0;
+
+private:
+
+	static int receiveHandleMessage(void *self, void *msg);
+	static int sendHandleMessage(void *self, void *msg);
+
+	void errorDeleteThreadMonitor(ThreadMonitor* &monitor, const char *error = NULL);
+
+	event_base* main_base_;
+
+	ProcessThreadMonitor *receive_thread_monitor_;
+	ProcessThreadMonitor *send_thread_monitor_;
+	EventBaseThreadMonitor *event_thread_monitor_;
+};
+
+
+
+#endif /* GWEN_TCPMONITOR_H_ */

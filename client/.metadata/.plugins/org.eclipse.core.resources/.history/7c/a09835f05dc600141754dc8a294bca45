@@ -1,0 +1,88 @@
+/*
+ * test.cpp
+ *
+ *  Created on: Dec 15, 2014
+ *      Author: root
+ */
+
+#include <event2/event.h>
+#include "TcpClientTest.h"
+#include "InetAddr.h"
+#include "BaseTimer.h"
+#include "TcpServerTest.h"
+#include <pthread.h>
+#include <event2/thread.h>
+#include "BlockingQueue.h"
+#include <string>
+#include "GlobalInfo.h"
+#include "ThreadMonitor.h"
+#include "Buffer.h"
+#include "LogClient.h"
+#include "SSTNetProtocol.h"
+
+
+void eventCallback(int fd, short which, void *arg)
+{
+	event_base *base = (event_base*)arg;
+	event_base_loopexit(base, NULL);
+
+	printf("stop eventCallback\n");
+}
+
+int main()
+{
+	GlobalInfo::useThreads();
+
+	GlobalInfo::print();
+
+	struct event_base *base = event_base_new();
+
+	event *ev = evsignal_new(base, 2, eventCallback, (void* )base);
+	if (!ev || event_add(ev, NULL) < 0)
+	{
+		event_del(ev);
+		return false;
+	}
+
+	InetAddr serverAddr("192.168.0.153", 5000);
+
+	TcpClientTest client;
+	//client.eventBase(base);
+//	clinet
+	client.init(0, 0, 1);
+	client.start();
+
+//	BaseTimer timer;
+//	timer.event_base(client.eventBase());
+//	timer.scheduleTimer(1, 0);
+
+	client.connect(serverAddr);
+
+	Buffer *buf, *tmp;
+	BUFFER_NEW_RETURN(buf, BUFFER_NORMAL_SIZE, -1);
+	BUFFER_NEW_RETURN(tmp, BUFFER_NORMAL_SIZE, -1);
+	unsigned int idnt = (unsigned int)0xAA8899BC;
+
+	short len = tdzm::encrpytPacketIndex(0, 0, 0);
+	*buf << (unsigned int)idnt  << (short)len << (short)0 << (unsigned int)0 ;
+
+	char data[5] = {0}
+
+	tdzm::encryptClientPacket(0, 4, 0);
+
+	*buf << data;
+
+	client.send(-1, buf);
+
+	event_base_dispatch(base);
+
+	event_base_free(base);
+
+	client.stop();
+	client.final();
+
+	printf("end of client\n");
+
+	return 0;
+}
+

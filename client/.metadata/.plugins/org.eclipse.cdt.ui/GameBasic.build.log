@@ -1,0 +1,6 @@
+11:51:00 **** Incremental Build of configuration Debug for project GameBasic ****
+make all 
+make: Nothing to be done for `all'.
+
+11:51:00 Build Finished (took 63ms)
+

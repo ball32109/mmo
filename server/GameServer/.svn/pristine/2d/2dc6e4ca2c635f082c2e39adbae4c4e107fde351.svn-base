@@ -1,0 +1,32 @@
+/*
+ * GateMonitor.h
+ *
+ *  Created on: Jan 6, 2015
+ *      Author: root
+ */
+
+#ifndef GAMEGATE_GATEMONITOR_H_
+#define GAMEGATE_GATEMONITOR_H_
+
+class GateMonitor
+{
+private:
+	GateMonitor(void);
+	~GateMonitor(void);
+
+public:
+	static GateMonitor *instance(void);
+	static void destroy(void);
+
+    int init(void);
+    int start(void);
+    int stop(void);
+    int final(void);
+
+private:
+	static GateMonitor* instance_;
+};
+
+#define GATE_MONITOR GateMonitor::instance()
+
+#endif /* GAMEGATE_GATEMONITOR_H_ */

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>change cproject</CommitComment>
+	<CommitComment>change TcpClient handleConnected</CommitComment>
+	<CommitComment>change TcpServer listen to support multi thread</CommitComment>
+	<CommitComment>ClientTcpConnection use Timer</CommitComment>
+	<CommitComment>优化TcpConnection、TcpClient</CommitComment>
+	<CommitComment>项目使用tcmalloc</CommitComment>
+	<CommitComment>增加logClient LogServer（未完整）</CommitComment>
+	<CommitComment>修改mian函数</CommitComment>
+	<CommitComment>具体程序参数决定是否为单进程。</CommitComment>
+	<CommitComment>增加守护进程具体实现</CommitComment>
+</CommitComments>

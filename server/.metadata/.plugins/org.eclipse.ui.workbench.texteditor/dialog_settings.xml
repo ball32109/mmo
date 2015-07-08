@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="287" key="DIALOG_WIDTH"/>
+		<item value="145" key="DIALOG_Y_ORIGIN"/>
+		<item value="424" key="DIALOG_HEIGHT"/>
+		<item value="579" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Sans|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="SceneTcpClient" key="selection"/>
+		<list key="findhistory">
+			<item value="ClientTcpServer"/>
+			<item value="SceneTcpClient"/>
+			<item value="GeneralTcpConnection"/>
+			<item value="evutil_socket_t"/>
+		</list>
+		<list key="replacehistory">
+			<item value="SceneTcpClient"/>
+			<item value="GateMonitor"/>
+			<item value="ClientTcpConnection"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="309" key="DIALOG_Y_ORIGIN"/>
+		<item value="446" key="DIALOG_X_ORIGIN"/>
+	</section>
+</section>

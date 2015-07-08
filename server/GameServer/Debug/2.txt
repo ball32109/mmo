@@ -1,0 +1,11 @@
+eventSupportedMethods:
+epoll	poll	select	
+eventUsingMethod:	 epoll
+eventBaseFeatures:	 3
+argc = 2
+argv0 = GameServer gate
+argv1 = 1
+GameSwitcher::start index = 1
+GameSwitcher::runGate
+GameSwitcher::signalCallBack sig=2
+GameSwitcher::endGate

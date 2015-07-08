@@ -1,0 +1,41 @@
+11:51:00 **** Incremental Build of configuration Debug for project GameBasic ****
+make all 
+make: Nothing to be done for `all'.
+11:51:00 **** Build of configuration Debug for project GameClient ****
+make all 
+Building file: ../TcpClientTest.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/workspace/client/GameBasic" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"TcpClientTest.d" -MT"TcpClientTest.d" -o "TcpClientTest.o" "../TcpClientTest.cpp"
+../TcpClientTest.cpp: In member function ‘virtual int TcpClientTest::receive(int, Buffer*)’:
+../TcpClientTest.cpp:29: warning: format ‘%d’ expects type ‘int’, but argument 3 has type ‘size_t’
+Finished building: ../TcpClientTest.cpp
+ 
+Building file: ../TcpConnectionTest.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/workspace/client/GameBasic" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"TcpConnectionTest.d" -MT"TcpConnectionTest.d" -o "TcpConnectionTest.o" "../TcpConnectionTest.cpp"
+Finished building: ../TcpConnectionTest.cpp
+ 
+Building file: ../TcpServerTest.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/workspace/client/GameBasic" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"TcpServerTest.d" -MT"TcpServerTest.d" -o "TcpServerTest.o" "../TcpServerTest.cpp"
+Finished building: ../TcpServerTest.cpp
+ 
+Building file: ../test.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/workspace/client/GameBasic" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"test.d" -MT"test.d" -o "test.o" "../test.cpp"
+Finished building: ../test.cpp
+ 
+Building target: GameClient
+Invoking: GCC C++ Linker
+g++  -o "GameClient"  ./TcpClientTest.o ./TcpConnectionTest.o ./TcpServerTest.o ./test.o  /home/workspace/client/GameBasic/Debug/libGameBasic.a -levent_pthreads -levent_core
+Finished building target: GameClient
+ 
+11:51:03 **** Incremental Build of configuration Debug for project GameClient ****
+make all 
+make: Nothing to be done for `all'.
+11:51:33 **** Incremental Build of configuration Debug for project GameClient ****
+make all 
+make: Nothing to be done for `all'.
+11:53:57 **** Incremental Build of configuration Debug for project GameClient ****
+make all 
+make: Nothing to be done for `all'.

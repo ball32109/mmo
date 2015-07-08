@@ -1,0 +1,6 @@
+16:45:48 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+make: Nothing to be done for `all'.
+
+16:45:49 Build Finished (took 352ms)
+

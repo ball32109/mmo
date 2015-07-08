@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>ProcessThreadMonitor::processPushById  id小于0时容易处理</CommitComment>
+	<CommitComment>change buffer operate =</CommitComment>
+	<CommitComment>重载Buffer赋值操作</CommitComment>
+	<CommitComment>1 优化Buffer，增加预分配空间。
+2 修改TcpClient，使connect支持阻塞。</CommitComment>
+	<CommitComment>TcpMonitor增加handleConnected接口</CommitComment>
+	<CommitComment>add GameClient</CommitComment>
+	<CommitComment>Initial import.</CommitComment>
+</CommitComments>

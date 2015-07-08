@@ -1,0 +1,27 @@
+11:53:47 **** Incremental Build of configuration Debug for project GameBasic ****
+make all 
+make: Nothing to be done for `all'.
+11:53:48 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+Building file: ../GameGate/ClientTcp/ClientTcpServer.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/home/workspace/server/GameBasic" -I"/home/workspace/server/GameServer" -I"/home/workspace/server/GameServer/GameGate" -I"/home/workspace/server/GameServer/GameGate/ClientTcp" -I"/home/workspace/server/GameServer/GameGate/SceneTcp" -I"/home/workspace/server/GameServer/GameStart" -I"/home/workspace/server/GameServer/GameStart/GameDeamon" -I"/home/workspace/server/GameServer/GameStart/GameSwitcher" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"GameGate/ClientTcp/ClientTcpServer.d" -MT"GameGate/ClientTcp/ClientTcpServer.d" -o "GameGate/ClientTcp/ClientTcpServer.o" "../GameGate/ClientTcp/ClientTcpServer.cpp"
+Finished building: ../GameGate/ClientTcp/ClientTcpServer.cpp
+ 
+Building target: GameServer
+Invoking: GCC C++ Linker
+g++  -o "GameServer"  ./GameStart/GameSwitcher/GameSwitcher.o  ./GameStart/GameDeamon/GameDeamon.o  ./GameStart/main.o  ./GameGate/SceneTcp/SceneTcpClient.o  ./GameGate/ClientTcp/ClientTcpConnection.o ./GameGate/ClientTcp/ClientTcpServer.o  ./GameGate/GateMonitor.o  ./TcpClientTest.o ./TcpConnectionTest.o ./TcpServerTest.o ./test.o  /home/workspace/server/GameBasic/Debug/libGameBasic.a -levent_pthreads -levent_core -ltcmalloc
+Finished building target: GameServer
+ 
+11:53:52 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+make: Nothing to be done for `all'.
+16:36:52 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+make: Nothing to be done for `all'.
+16:37:46 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+make: Nothing to be done for `all'.
+16:45:48 **** Incremental Build of configuration Debug for project GameServer ****
+make all 
+make: Nothing to be done for `all'.

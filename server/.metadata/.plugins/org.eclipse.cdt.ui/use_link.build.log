@@ -1,0 +1,10 @@
+11:55:22 **** Incremental Build of configuration Debug for project use_link ****
+make all 
+Building target: use_link
+Invoking: GCC C++ Linker
+g++  -o "use_link"  ./main.o  /home/workspace/server/link/Debug/liblink.a 
+Finished building target: use_link
+ 
+
+11:55:22 Build Finished (took 117ms)
+
